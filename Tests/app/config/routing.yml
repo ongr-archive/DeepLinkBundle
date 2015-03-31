@@ -1,0 +1,3 @@
+deeplink_route:
+    pattern: /deeplink/
+    defaults: { _controller: ONGRDeepLinkBundle:Default:index }

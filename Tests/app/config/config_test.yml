@@ -1,0 +1,27 @@
+imports:
+    - { resource: parameters_test.yml }
+    - { resource: ../../../Resources/config/services.yml }
+
+# Framework Configuration
+framework:
+    esi:             ~
+    fragments:       { path: /_proxy }
+    translator:      { fallback: "%locale%" }
+    secret:          %secret%
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: %kernel.debug%
+    form:            true
+    csrf_protection: true
+    validation:      { enable_annotations: true }
+    templating:
+        engines: ['twig']
+        #assets_version: 201204261
+        assets_base_urls:
+            http: [%cdn_url%]
+            ssl: [%cdn_url_ssl%]
+    default_locale:  "%locale%"
+    trusted_proxies: ~
+    session:         ~
+    test: ~
+

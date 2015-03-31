@@ -1,0 +1,8 @@
+Soon, my friend, soon...
+
+<form name="redirectForm">
+    <input type="hidden" name="id" value="{{ id }}">
+    {% for key, value in params %}
+        <input type="hidden" name="prams[{{ key }}]" value="{{ value }}">
+    {% endfor %}
+</form>

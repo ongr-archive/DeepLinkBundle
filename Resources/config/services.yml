@@ -1,0 +1,10 @@
+parameters:
+    ongr_deeplink.twig.deeplink.class: ONGR\DeepLinkBundle\Twig\LinkExtension
+
+services:
+    ongr_deeplink.twig.deeplink:
+        class: %ongr_deeplink.twig.deeplink.class%
+        arguments:
+          - @router
+        tags:
+          - { name: 'twig.extension' }
